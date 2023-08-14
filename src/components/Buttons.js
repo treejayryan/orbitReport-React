@@ -1,8 +1,16 @@
-const Buttons = () => {
+import React from 'react';
+
+const Buttons = ({filterByType, setSat, displaySats}) => {
   return (
     <div>
-      <button>Placeholder Button</button>
-      <button>All Orbits</button>
+      {displaySats.map((sat, id) => {
+        return ( 
+          <button onClick={() => filterByType(sat)} key={id}>
+            {sat} Orbit
+          </button>
+        );
+      })}
+      <button onClick={() => setSat(satData)}>All Orbits</button>
       </div>
   );
 };
